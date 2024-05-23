@@ -9,6 +9,9 @@ PKG_SOURCE_VERSION:=1ba6ee7cb98b5b6448bc2a2be318eb3518d4de79
 PKG_MIRROR_HASH:=a31c1d79ffb253507a1a8e0bb8e6d93fa65efef22a3cdd098400157187bbfe20
 
 include $(INCLUDE_DIR)/package.mk
+MAKE_VARS += VER=$(PKG_VERSION) 
+MAKE_PATH:=src
+DEPENDS:=+libpthread +libopenssl
 
 $(eval $(call BuildPackage,smartdns))
 
