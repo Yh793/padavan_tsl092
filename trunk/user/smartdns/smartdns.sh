@@ -166,7 +166,7 @@ Get_sdns_conf () {
     else
         echo "serve-expired no" >> "$smartdns_tmp_Conf"
     fi
-    echo "log-level warn" >> "$smartdns_tmp_Conf"
+    #echo "log-level warn" >> "$smartdns_tmp_Conf"
     listnum=$(nvram get sdnss_staticnum_x)
     for i in $(seq 1 "$listnum")
     do
@@ -431,9 +431,9 @@ Start_smartdns () {
     logger -t "SmartDNS" "创建配置文件..."
     ipset -N smartdns hash:net >/dev/null
     Get_sdns_conf
-    grep -v '^#' $smartdns_address_Conf | grep -v "^$" >> "$smartdns_tmp_Conf"
-    grep -v '^#' $smartdns_blacklist_Conf | grep -v "^$" >> "$smartdns_tmp_Conf"
-    grep -v '^#' $smartdns_whitelist_Conf | grep -v "^$" >> "$smartdns_tmp_Conf"
+#    grep -v '^#' $smartdns_address_Conf | grep -v "^$" >> "$smartdns_tmp_Conf"
+#    grep -v '^#' $smartdns_blacklist_Conf | grep -v "^$" >> "$smartdns_tmp_Conf"
+#    grep -v '^#' $smartdns_whitelist_Conf | grep -v "^$" >> "$smartdns_tmp_Conf"
     grep -v '^#' $smartdns_custom_Conf | grep -v "^$" >> "$smartdns_tmp_Conf"
     sed -i '/my.router/d' "$smartdns_tmp_Conf"
     echo "domain-rules " "/my.router/ -c none -a $IPS4 -d no" >> "$smartdns_tmp_Conf"
