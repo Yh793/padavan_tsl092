@@ -5,7 +5,7 @@ PKG_VERSION:=1.2023.41
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://www.github.com/pymumu/smartdns.git
-PKG_SOURCE_VERSION:=b43601da65f6215080bac3ebbef63a27201de44b
+PKG_SOURCE_VERSION:=d248f6d1408d22ea8920f7036572ba3b6ae93674
 PKG_MIRROR_HASH:=skip
 include $(INCLUDE_DIR)/package.mk
 
